@@ -1,7 +1,7 @@
 # Network-Programming
 This project focuses on socket programming
 
-Part 1 Design and implementation of a single-thread client / server pair.
+Project 1 Design and implementation of a single-thread client / server pair.
 
 Singlethread_client.py
 Singlethread_Server.py
@@ -14,7 +14,7 @@ This functionality is achieved by leveraging a single thread server. Only the ma
 
 A trade off I made to make the program more simplistic was traversing through the entire wordlist. The wordlist is organized in alphabetic order, a better implementation would be to have the server interpret the first char (if its not a wild card) and go directly to the corresponding section. One suggestion of how to implement this in O(1) time would be a dictionary mapping each alphabet character to the sub-list of words in wordlist.txt that start with that character. However, you would still have to traverse through each sub-list. 
 
-Part 2 Multi-threaded Server
+Project 2 Multi-threaded Server
 
 Multithread_client.py
 Thread-sever.py
