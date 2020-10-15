@@ -1,12 +1,16 @@
 # Network-Programming
 This project focuses on socket programming
 
-Project 1 Design and implementation of a single-thread client / server pair.
+## How to Run
+
+Utilize two terminals one for the _SERVER_ and one for the _CLIENT_. Instantiate the server first before running the client on the second terminal. 
+
+## Part 1 - Design and implementation of a single-thread client / server pair.
 
 Singlethread_client.py
 Singlethread_Server.py
 
-More specifically, a server responsible for only serving one client at a time. The single client sends a query to the server; the query consists of an English word with an individual char replaced by “*” representing a wildcard and a number 0-9. The wildcard represents the location in which the input word can vary, and the input number represents the number of max characters that the wildcard represents. 
+This program consists of a server responsible for only serving one client at a time. The single client sends a query to the server; the query consists of an English word with an individual char replaced by “*” representing a wildcard and a number 0-9. The wildcard represents the location in which the input word can vary, and the input number represents the number of max characters that the wildcard represents. 
 
 An example of a valid input would be “zo*e 2”. When the server receives the query, it searches through Wordlist.txt and returns all the words that contain less than or equal to the number input (in this case 2) of chars in place of the wild card. In other words, between the first part of the word input (prefix) and last part of the word input (suffix) (including 0 chars between suffix and prefix).  e.g., assuming these words are in Wordlist.txt, server returns: zoe, zone, zolle. The compiled list by the server is then sent back to the client. 
 
@@ -14,7 +18,7 @@ This functionality is achieved by leveraging a single thread server. Only the ma
 
 A trade off I made to make the program more simplistic was traversing through the entire wordlist. The wordlist is organized in alphabetic order, a better implementation would be to have the server interpret the first char (if its not a wild card) and go directly to the corresponding section. One suggestion of how to implement this in O(1) time would be a dictionary mapping each alphabet character to the sub-list of words in wordlist.txt that start with that character. However, you would still have to traverse through each sub-list. 
 
-Project 2 Multi-threaded Server
+## Part 2 - Multi-threaded Server
 
 Multithread_client.py
 Thread-sever.py
